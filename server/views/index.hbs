@@ -1,0 +1,34 @@
+{{> header}}
+{{> menu}}
+
+<h1>Pàgina principal</h1>
+
+<section>
+  <h2>Movies (primeres 5)</h2>
+  <div class="cards">
+    {{#each movies}}
+      <article class="card">
+        <h3>{{title}} ({{release_year}})</h3>
+        {{!-- Caràtula fictícia: podries fer servir film_id per construir una ruta d’imatge --}}
+        <img src="/imatges/default-movie.png" alt="{{title}}">
+        <h4>Actors</h4>
+        <ul>
+          {{#each actors}}
+            <li>{{name}}</li>
+          {{/each}}
+        </ul>
+      </article>
+    {{/each}}
+  </div>
+</section>
+
+<section>
+  <h2>Categories (primeres 5)</h2>
+  <ul>
+    {{#each categories}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+</section>
+
+{{> footer}}

@@ -1,0 +1,27 @@
+{{> header}}
+{{> menu}}
+
+<h1>Clients</h1>
+
+<div class="cards">
+  {{#each customers}}
+    <article class="card">
+      <h2>{{first_name}} {{last_name}}</h2>
+      <p>{{email}}</p>
+      <h3>Primers 5 lloguers</h3>
+      {{#if rentals.length}}
+        <ul>
+          {{#each rentals}}
+            <li>
+              {{title}} – {{rental_date}}
+            </li>
+          {{/each}}
+        </ul>
+      {{else}}
+        <p>Sense lloguers registrats.</p>
+      {{/if}}
+    </article>
+  {{/each}}
+</div>
+
+{{> footer}}
