@@ -1,26 +1,21 @@
 {{> header}}
 {{> menu}}
 
-<h1>Clients</h1>
+<h1 class="title">Clients</h1>
 
-<div class="cards">
+<div class="card-grid">
   {{#each customers}}
-    <article class="card">
+    <div class="card">
       <h2>{{first_name}} {{last_name}}</h2>
       <p>{{email}}</p>
-      <h3>Primers 5 lloguers</h3>
-      {{#if rentals.length}}
-        <ul>
-          {{#each rentals}}
-            <li>
-              {{title}} – {{rental_date}}
-            </li>
-          {{/each}}
-        </ul>
-      {{else}}
-        <p>Sense lloguers registrats.</p>
-      {{/if}}
-    </article>
+
+      <h3>Lloguers recents</h3>
+      <ul class="list">
+        {{#each rentals}}
+          <li>{{rental_date}}</li>
+        {{/each}}
+      </ul>
+    </div>
   {{/each}}
 </div>
 
